@@ -5,55 +5,55 @@
     <title>Kinobilletter</title>
 </head>
 <body>
-<h1>Bestilling av kinobilletter</h1>
+    <h1>Bestilling av kinobilletter</h1>
 
-<label for="filmer">Velg film: </label>
-<select id="filmer" onchange="erFyltFilm()">
-    <option value="default">Velg film her</option>
-    <option value="0">Dune</option>
-    <option value="1">Spider-Man</option>
-    <option value="2">The Lord of the Rings</option>
-    <option value="3">La La Land</option>
-</select>
-<span id="filmError" style="color: red;"></span>
+    <label for="filmer">Velg film: </label>
+    <select id="filmer" onchange="erFyltFilm()">
+        <option value="default">Velg film her</option>
+        <option value="0">Dune</option>
+        <option value="1">Spider-Man</option>
+        <option value="2">The Lord of the Rings</option>
+        <option value="3">La La Land</option>
+    </select>
+    <span id="filmError" style="color: red;"></span>
 
-<br>
-<br>
-<label for="antall">Antall &nbsp;</label>
-<input type="number" id="antall" min="1" style="width: 30px" onchange="erTom('antall', 'antallError')">
-<span id="antallError" style="color: red;"></span>
+    <br>
+    <br>
+    <label for="antall">Antall &nbsp;</label>
+    <input type="number" id="antall" min="1" style="width: 30px" onchange="erTom('antall', 'antallError')">
+    <span id="antallError" style="color: red;"></span>
 
-<br>
-<br>
+    <br>
+    <br>
 
-<label for="fornavn">Fornavn &nbsp; &nbsp;</label>
-<input type="text" id="fornavn" onchange="sjekkNavn('fornavn', 'fornavnError')">
-<span id="fornavnError" style="color: red;"></span>
-<br>
+    <label for="fornavn">Fornavn &nbsp; &nbsp;</label>
+    <input type="text" id="fornavn" onchange="sjekkNavn('fornavn', 'fornavnError')">
+    <span id="fornavnError" style="color: red;"></span>
+    <br>
 
-<label for="etternavn">Etternavn &nbsp;</label>
-<input type="text" id="etternavn" onchange="sjekkSkrivefeilNavn('etternavn', 'etternavnError')">
-<span id="etternavnError" style="color: red;"></span>
-<br>
+    <label for="etternavn">Etternavn &nbsp;</label>
+    <input type="text" id="etternavn" onchange="sjekkNavn('etternavn', 'etternavnError')">
+    <span id="etternavnError" style="color: red;"></span>
+    <br>
 
-<label for="tlfnr">Telefonnr &nbsp;</label>
-<input type="text" id="tlfnr" onchange="sjekkTlf()">
-<span id="tlfError" style="color: red;"></span>
-<br>
+    <label for="tlfnr">Telefonnr &nbsp;</label>
+    <input type="text" id="tlfnr" onchange="sjekkTlf()">
+    <span id="tlfError" style="color: red;"></span>
+    <br>
 
-<label for="epost">Epost&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-<input type="email" id="epost" onchange="sjekkEpost()">
-<span id="epostError" style="color: red;"></span>
-<br>
+    <label for="epost">Epost&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <input type="email" id="epost" onchange="sjekkEpost()">
+    <span id="epostError" style="color: red;"></span>
+    <br>
 
-<button onclick="leggTilBillett()">Kjøp billett</button>
-<br>
+    <button onclick="leggTilBillett()">Kjøp billett</button>
+    <br>
 
-<h2>Alle billetter</h2>
-<div id="billetter"></div>
+    <h2>Alle billetter</h2>
+    <div id="billetter"></div>
 
-<button onclick="slettBilletter()">Slett alle billettene</button>
+    <button onclick="slettBilletter()">Slett alle billettene</button>
 
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

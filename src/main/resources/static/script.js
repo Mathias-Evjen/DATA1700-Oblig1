@@ -24,7 +24,7 @@ function leggTilBillett() {
         return;
     }
 
-    let eksisterendeBilletter = billetter.length; // Lagrer antall billetter allerede skrevet ut
+    //let eksisterendeBilletter = billetter.length; // Lagrer antall billetter allerede skrevet ut
 
     // Array med navn på filmer indeksert tilsvarende verdier i "filmer"-select
     const filmer = ["Dune", "Spider-Man", "The Lord of the Rings", "La La Land"];
@@ -40,14 +40,10 @@ function leggTilBillett() {
     };
 
     billetter.push(billett); //Legger til billett-objekt i billetter-arrayet
+    console.log(billetter);
 
     // Skriver ut billetter i billeter-arrayet som ikke allerede er skrevet ut
-    for (let i = eksisterendeBilletter; i < billetter.length; i++) {
-        let nyttAvsnitt = document.createElement("p");
-        nyttAvsnitt.textContent = "Film: " + billetter[i].film + ", antall: " + billetter[i].antall + ", Navn: " + billetter[i].fornavn + " " + billetter[i].etternavn + ", telefonnummer: " + billetter[i].tlf + ", epost: " + billetter[i].epost;
-        document.getElementById("billetter").appendChild(nyttAvsnitt);
-        document.getElementById("billetter").appendChild(document.createElement("br"));
-    }
+    leggTilHTML(billetter);
 
     // Resetter inputs etter at billett blir kjøpt
     document.getElementById("filmer").selectedIndex = "default";
@@ -58,6 +54,16 @@ function leggTilBillett() {
     document.getElementById("epost").value = "";
 
 
+}
+
+function leggTilHTML(billetter) {
+    let billettTekst = "<ul>";
+    for (const billett of billetter) {
+        let nyBillett = "<li> Film: " + billett.film + ", antall: " + billett.antall + ", Navn: " + billett.fornavn + " " + billett.etternavn + ", telefonnummer: " + billett.tlf + ", epost: " + billett.epost + "</li>";
+        billettTekst += nyBillett;
+    }
+    billettTekst += "</ul>";
+    document.getElementById("billetter").innerHTML = billettTekst;
 }
 
 function slettBilletter() {
