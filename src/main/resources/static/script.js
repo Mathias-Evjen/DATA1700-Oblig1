@@ -24,20 +24,8 @@ function leggTilBillett() {
         return;
     }
 
-    //let eksisterendeBilletter = billetter.length; // Lagrer antall billetter allerede skrevet ut
-
-    // Array med navn på filmer indeksert tilsvarende verdier i "filmer"-select
-    const filmer = ["Dune", "Spider-Man", "The Lord of the Rings", "La La Land"];
-
     // Oppretter et billett-objekt fra inputs
-    const billett = {
-        film: filmer[document.getElementById('filmer').value],
-        antall: document.getElementById('antall').value,
-        fornavn: document.getElementById('fornavn').value,
-        etternavn: document.getElementById('etternavn').value,
-        tlf: document.getElementById('tlfnr').value,
-        epost: document.getElementById('epost').value
-    };
+    billett = opprettBestilling("filmer", "antall", "fornavn", "etternavn", "tlfnr", "epost");
 
     billetter.push(billett); //Legger til billett-objekt i billetter-arrayet
     console.log(billetter);
@@ -54,6 +42,18 @@ function leggTilBillett() {
     document.getElementById("epost").value = "";
 
 
+}
+
+function opprettBestilling(film, antall, fornavn, etternavn, tlf, epost) {
+    const billett = {
+        film: document.getElementById(film).value,
+        antall: document.getElementById(antall).value,
+        fornavn: document.getElementById(fornavn).value,
+        etternavn: document.getElementById(etternavn).value,
+        tlf: document.getElementById(tlf).value,
+        epost: document.getElementById(epost).value
+    };
+    return billett;
 }
 
 function leggTilHTML(billetter) {
