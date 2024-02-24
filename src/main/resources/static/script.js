@@ -77,11 +77,11 @@ function sjekkNavn(navn, error) {
 
     if (!tillatt.test(document.getElementById(navn).value)) {
         document.getElementById(error).innerHTML = "Ikke gyldig fornavn";
+    } else if (document.getElementById(navn).value.length < 1) {
+        document.getElementById(error).innerHTML = "Må fylles inn";
     } else {
         document.getElementById(error).innerHTML = "";
     }
-
-    erTom("fornavn", "fornavnError");
 }
 
 // Sjekker at telefonnummer er riktig formatert
